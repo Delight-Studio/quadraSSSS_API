@@ -25,6 +25,9 @@ export function addRequestAmount(botId) {
                                 bot.requestAmount = days
                             }})
                         if (!isTodayData) { // 오늘자 데이터가 없다면
+                            if (days.length > 30) {
+                                days.shift()
+                            }
                             days.push({ date, requestAmount: 1 }) // 오늘자 데이터 추가
                             bot.requestAmount = days
                         }
@@ -60,6 +63,9 @@ export function updateServerAmount(botId, serverNum) {
                         }
                     })
                     if (!isTodayData) { // 오늘자 데이터가 없다면
+                        if (days.length > 30) {
+                            days.shift()
+                        }
                         days.push({ date, serverAmount: serverNum }) // 오늘자 데이터 추가
                         bot.serverAmount = days
                     }
@@ -95,6 +101,9 @@ export function updateUserAmount(botId, userNum) {
                             }
                         })
                         if (!isTodayData) { // 오늘자 데이터가 없다면
+                            if (days.length > 30) {
+                                days.shift()
+                            }
                             days.push({ date, userAmount: userNum }) // 오늘자 데이터 추가
                             bot.userAmount = days
                         }
@@ -130,6 +139,9 @@ export function updateHeartAmount(botId, heartNum) {
                             }
                         })
                         if (!isTodayData) { // 오늘자 데이터가 없다면
+                            if (days.length > 30) {
+                                days.shift()
+                            }
                             days.push({ date, heartAmount: heartNum }) // 오늘자 데이터 추가
                             bot.heartAmount = days
                         }
