@@ -1,4 +1,7 @@
 import { createConnection, Schema } from "mongoose";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const botConnection = createConnection(`mongodb+srv://teamQbit:${process.env.DB_PASSWORD}@quadrassss.dni22cp.mongodb.net/?retryWrites=true&w=majority`)
 

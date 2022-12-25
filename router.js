@@ -33,14 +33,14 @@ router.get('/bots', (req, res, next) => {
     })
 })
 
-router.post('/register/:botId/:ownerId', (req, res, next) => { // 봇 등록
+router.get('/register/:botId/:ownerId', (req, res, next) => { // 봇 등록
     const botId = req.params.botId
     const ownerId = req.params.ownerId 
     registerBot(botId, ownerId)
     res.sendStatus(201)
 })
 
-router.put('/addRequestAmount/:botId', (req, res, next) => {
+router.get('/addRequestAmount/:botId', (req, res, next) => {
     const botId = req.params.botId
     addRequestAmount(botId)
         .then(result => {
@@ -52,7 +52,7 @@ router.put('/addRequestAmount/:botId', (req, res, next) => {
     })
 })
 
-router.put('/updateServerAmount/:botId/:serverNum', (req, res, next) => {
+router.get('/updateServerAmount/:botId/:serverNum', (req, res, next) => {
     const botId = req.params.botId
     const serverNum = req.params.serverNum
     updateServerAmount(botId, serverNum)
@@ -65,7 +65,7 @@ router.put('/updateServerAmount/:botId/:serverNum', (req, res, next) => {
     })
 })
 
-router.put('/updateUserAmount/:botId/:userNum', (req, res, next) => {
+router.get('/updateUserAmount/:botId/:userNum', (req, res, next) => {
     const botId = req.params.botId
     const userNum = req.params.userNum
     updateUserAmount(botId, userNum)
@@ -78,7 +78,7 @@ router.put('/updateUserAmount/:botId/:userNum', (req, res, next) => {
     })
 })
 
-router.put('/updateHeartAmount/:botId/:heartNum', (req, res, next) => {
+router.get('/updateHeartAmount/:botId/:heartNum', (req, res, next) => {
     const botId = req.params.botId
     const heartNum = req.params.heartNum
     updateHeartAmount(botId, heartNum)
@@ -92,7 +92,7 @@ router.put('/updateHeartAmount/:botId/:heartNum', (req, res, next) => {
 })
 
 
-router.put('/addDeveloper/:botId/:devId', (req, res, next) => {
+router.get('/addDeveloper/:botId/:devId', (req, res, next) => {
     const botId = req.params.botId
     const devId = req.params.devId
     addDeveloper(botId, devId)
@@ -105,7 +105,7 @@ router.put('/addDeveloper/:botId/:devId', (req, res, next) => {
     })
 })
 
-router.put('/addNotificationChannel/:botId/:channelId', (req, res, next) => {
+router.get('/addNotificationChannel/:botId/:channelId', (req, res, next) => {
     const botId = req.params.botId
     const channelId = req.params.channelId
     addNotificationChannel(botId, channelId)
